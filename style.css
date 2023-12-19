@@ -29,11 +29,10 @@ body{
     padding: 15px;
     border: 1px solid var(--border-color);
     border-radius: 20px 20px 20px 20px;
-    box-shadow: 0px 0px 40px 1px #c7c3c2;
+    /* box-shadow: 0px 0px 40px 1px #c7c3c2; */
     background: #e8dde063;
     backdrop-filter: blur(20px);
-    transition: border-radius 0.5s ease;
-
+    transition: border-radius 0.6s ease;
 }
 .top-nav svg{
     width: 30px;
@@ -52,14 +51,13 @@ body{
     display: flex;
     justify-content: space-between;
     align-items:flex-start;
-    padding: 20px 30px;
-    border: 1px solid var(--border-color);
+    padding: 0;
+    border: none;
     border-radius: 0px 0px 20px 20px;
-    box-shadow: 0px 0px 40px 1px #c7c3c2;
     background: #e8dde063;
     backdrop-filter: blur(20px);
-    transform: scaleY(0);
-    transform-origin: top center;
+    height:0px;
+    overflow: hidden;
     transition: all 0.3s ease;
 }
 .middle-nav-column {
@@ -83,15 +81,12 @@ body{
 }
 .middle-nav-column ul li a{
     color: black;
-    transition: all 0.2s ease;
 }
 .middle-nav-column ul li a:hover{
     text-decoration: underline;
     color: blue ;
 }
-p,a{
-    transition: opacity .1s ease;
-}
+
 .hero-section{
     margin-top: 200px;
     display: flex;
@@ -127,6 +122,60 @@ p,a{
     color: black;
     font-family: 'Inter',sans-serif;
     font-weight: 500;
+}
+.features-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding: 50px 90px;
+    margin-top: 150px;
+    background-color: black;
+}
+.features-section *{
+    color: white;
+}
+.features-section h2{
+    font-size: 90px;
+    margin-top: 100px;
+    font-weight: 300;
+}
+.meet-atlas{
+    text-align: center;
+    font-size: 30px;
+    color: var(--text-color);
+    padding: 0px 100px;
+    margin-top: 80px;
+}
+.meet-atlas span{
+    margin-bottom: 30px;
+}
+.phone-mockup img{
+    width: 577px;
+    height: auto;
+}
+.features{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--border-color);
+    gap: 50px;
+    padding: 50px 30px;
+    /* margin-top: 70px; */
+    place-items: center;
+}
+.features p{
+    font-size: 25px;
+    padding: 30px 0px;
+}
+
+.features p:nth-child(2){
+    color: var(--text-color);
+    font-size: 20px;
+}
+.features-section div:last-child{
+    border-bottom: 1px solid var(--border-color);
 }
 @keyframes box-thing {
     0%{
