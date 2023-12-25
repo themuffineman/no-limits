@@ -13,6 +13,10 @@
 body{
     background-color: var(--bg-color);
 }
+body p{
+    animation: fade-in .5s ease;
+    animation-timeline: view();
+}
 .nav-wrapper{
     position: fixed;
     display: flex;
@@ -99,15 +103,15 @@ body{
     font-size: 90px;
     font-weight: 300;
     color: var(--text-color);
-    opacity: 0;
+    opacity: 1;
     animation: fadeIn 1s ease-out forwards;
     z-index: -1;
 }
-.hero-section img{
+.hero-img{
     width: 500px;
     height: auto;
-    transform: rotate(10, 100, 10deg);
     animation: box-thing 2s ease infinite;
+    z-index: -100000;
 }
 .hero-section p{
     text-align: center;
@@ -174,33 +178,44 @@ body{
     color: var(--text-color);
     font-size: 20px;
 }
-.features-section div:last-child{
+.features-last{
     border-bottom: 1px solid var(--border-color);
 }
+.images-grid-1{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 30px;
+    width: 100%;
+    margin-top: 150px;
+}
+.images-grid-1 div{
+    grid-column: span 1; 
+    grid-row: span 1;
+    width: 100%;
+}
+
+.images-grid-1 div img{
+    width: 100% ;
+    border-radius: 30px;
+}
+.images-grid-1 div:nth-child(1){
+    grid-column: span 2
+}
+ 
+
 @keyframes box-thing {
     0%{
-        transform: rotate(10, 100, 10deg)
-        
+        transform: rotate(0deg)
     }
     50%{
-        transform: rotate(-100, -300, 10deg)
+        transform: rotate(10deg)
     }
-    50%{
-        transform: rotate(100, 300, 10deg)
-    }
-    
     100% {
-        transform: rotate(10, 100, 10deg)
+        transform: rotate(0deg)
     }
 }
 
-@keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(-60px);
+@keyframes fade-in {
+    from {scale: .8; opacity: 0;}
+    to {scale: 1; opacity: 1;}
     }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
