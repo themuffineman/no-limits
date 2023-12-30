@@ -198,6 +198,18 @@ body{
 .images-grid-1 div:nth-child(1){
     grid-column: span 2
 }
+.clip-image{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.clip-image img{
+    max-width: 100%;
+    clip-path: polygon(12% 13%, 83% 13%, 83% 83%, 12% 83%);   
+    /* z-index: -1000; */
+    animation: clip-reveal;
+    animation-timeline: view();
+}
  
 
 @keyframes box-thing {
@@ -209,6 +221,12 @@ body{
     }
     100% {
         transform: rotate(0deg)
+    }
+}
+
+@keyframes clip-reveal{
+    to{
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
     }
 }
 
