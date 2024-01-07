@@ -1,5 +1,6 @@
 const navWrapper = document.querySelector('.nav-wrapper');
 const menuBtn = document.querySelector('.top-nav svg:nth-child(2)');
+const bodyClick = document.querySelector('body')
 let isMenuOpen = false;
 
 function openMenu(){
